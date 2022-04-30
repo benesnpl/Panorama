@@ -45,5 +45,6 @@ variable "subnet_id" {
 variable "vpc_security_group_ids" {
   description = "A list of security group IDs to associate Panorama with."
   type        = list(any)
+  default = ["sg-0ac798f1eab2d3ed2"]
 }
 
