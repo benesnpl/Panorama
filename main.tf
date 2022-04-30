@@ -19,7 +19,7 @@ data "aws_ami" "panorama_ami" {
 
   filter {
     name   = "name"
-    values = ["Panorama-AWS-${var.panorama_version}*"]
+    values = ["Panorama-AWS-*"]
   }
 }  
   # Create the Panorama Instance
