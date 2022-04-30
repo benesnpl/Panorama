@@ -10,7 +10,7 @@ terraform {
 
 provider "aws" {
   region = "eu=west-1"
-
+}
 # In this part you browse for the newest AMI for Panorama - Source is the AWS Market place and AMI is in BYOL
 
 data "aws_ami" "panorama_ami" {
