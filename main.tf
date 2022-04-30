@@ -20,7 +20,7 @@ data "aws_ami" "panorama_ami" {
     name   = "name"
     values = ["Panorama-AWS-${var.panorama_version}*"]
   }
-  
+}  
   # Create the Panorama Instance
 resource "aws_instance" "Panorama" {
   ami                                  = data.aws_ami.panorama_ami.id
