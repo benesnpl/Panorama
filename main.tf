@@ -25,7 +25,7 @@ data "aws_ami" "panorama_ami" {
 
 module "sec-groups" {
   source  = "app.terraform.io/gbenetatos_Org/sec-groups/aws"
-  version = "3.0.2"
+  version = "4.0.0"
 }
 
   # Create the Panorama Instance
