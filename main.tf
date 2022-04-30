@@ -40,7 +40,6 @@ resource "aws_instance" "Panorama" {
     delete_on_termination = true
   }
 
-  tags = merge(var.global_tags, { Name = var.name })
 }
 
 
