@@ -28,7 +28,6 @@ module "sec-groups" {
   version = "1.0.2"
 }
 
-module "
   # Create the Panorama Instance
 resource "aws_instance" "Panorama" {
   ami                                  = data.aws_ami.panorama_ami.id
