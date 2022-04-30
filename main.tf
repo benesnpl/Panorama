@@ -42,6 +42,10 @@ resource "aws_instance" "Panorama" {
   ebs_optimized                        = true
   monitoring                           = false
 
+  tags = {
+    Name = var.name
+  }
+}
   root_block_device {
     delete_on_termination = true
   }
