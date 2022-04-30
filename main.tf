@@ -23,6 +23,11 @@ data "aws_ami" "panorama_ami" {
   }
 }  
 
+module "sec-groups" {
+  source  = "app.terraform.io/gbenetatos_Org/sec-groups/aws"
+  version = "1.0.2"
+}
+
 module "
   # Create the Panorama Instance
 resource "aws_instance" "Panorama" {
@@ -32,7 +37,7 @@ resource "aws_instance" "Panorama" {
   key_name                             = var.ssh_key_name
   private_ip                           = var.private_ip_address
   subnet_id                            = var.subnet_id
-  vpc_security_group_ids               = var.vpc_security_group_ids
+  vpc_security_group_ids               = sec-groups.aws_security_group.allow_tls.sg_id
   disable_api_termination              = false
   instance_initiated_shutdown_behavior = "stop"
   ebs_optimized                        = true
