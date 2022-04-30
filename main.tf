@@ -36,7 +36,7 @@ resource "aws_instance" "Panorama" {
   key_name                             = var.ssh_key_name
   private_ip                           = var.private_ip_address
   subnet_id                            = var.subnet_id
-  vpc_security_group_ids               = sec-groups.allow_tls.sg_id
+  vpc_security_group_ids               = module.sec-groups.allow_tls.sg_id
   disable_api_termination              = false
   instance_initiated_shutdown_behavior = "stop"
   ebs_optimized                        = true
