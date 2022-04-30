@@ -65,4 +65,5 @@ variable "rule_inbound_sg" {
       proto = "tcp"
       cidr_block = ["192.168.0.0/16","10.159.94.0/23"]
     }
-    ]}
+    ]
+}
