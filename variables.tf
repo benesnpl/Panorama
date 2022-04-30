@@ -48,7 +48,7 @@ variable "vpc_security_group_ids" {
   default = ["sg-0ac798f1eab2d3ed2"]
 }
 
-variable "rule_inbound_sg" {
+variable "rules_inbound_sg" {
   default = [
     {
       port = 443
