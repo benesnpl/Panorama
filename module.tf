@@ -7,15 +7,13 @@ resource "aws_security_group" "allow_tls" {
   description = "Basic communication for Panorama"
   vpc_id      = aws_vpc.main.id
 
-  ingress {
-    description      = "TLS from VPC"
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.main.cidr_block]
-    ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
-  }
-
+  dynamic "ingress" {
+    for_each = var.rules_inbound_sg
+    content {
+      from_port = ingress.value["port"]
+      to_port = ingress.value["port"]
+      protocol = ingress.value["proto"]
+      cidr_blocks = ingress.value["cidr_block"]
   egress {
     from_port        = 0
     to_port          = 0
