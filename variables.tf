@@ -48,3 +48,21 @@ variable "vpc_security_group_ids" {
   default = ["sg-0ac798f1eab2d3ed2"]
 }
 
+variable "rule_inbound_sg" {
+  default = [
+    {
+      port = 443
+      proto = "tcp"
+      cidr_block = ["192.168.0.0/16","10.159.94.0/23"]
+    },
+    {
+      port = 80
+      proto = "tcp"
+      cidr_block = ["192.168.0.0/16","10.159.94.0/23"]
+    },
+    {
+      port = 22
+      proto = "tcp"
+      cidr_block = ["192.168.0.0/16","10.159.94.0/23"]
+    }
+    ]}
