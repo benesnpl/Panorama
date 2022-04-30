@@ -3,6 +3,12 @@ variable "name" {
   type        = string
 }
 
+variable "vpc_id" {
+  description = "Name for the Panorama instance."
+  type        = string
+  default = "vpc-060690a56401ea278"
+}
+
 variable "panorama_version" {
   description = "This is the Panorama Version you want to deploy"
   default     = "10.0.6"
