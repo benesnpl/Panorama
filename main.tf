@@ -41,7 +41,6 @@ resource "aws_instance" "Panorama" {
   instance_initiated_shutdown_behavior = "stop"
   ebs_optimized                        = true
   monitoring                           = false
- }
   tags = {
     Name = var.name
   }
